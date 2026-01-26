@@ -23,8 +23,7 @@ import Layout from '../layouts/Layout.astro';
 						<span>Core Supply Partners LLC</span>
 					</div>
 					<div class="topbar-actions">
-						<button class="toggle is-active" data-lang-toggle="es" type="button">ES</button>
-						<button class="toggle" data-lang-toggle="en" type="button">EN</button>
+						<button class="toggle" data-lang-toggle type="button">EN</button>
 						<button
 							class="toggle"
 							data-theme-toggle
@@ -52,7 +51,7 @@ import Layout from '../layouts/Layout.astro';
 							logísticos sólidos, cumplimiento legal y distribución mayorista responsable.
 						</p>
 						<div class="hero-actions">
-							<a class="button" href="#contacto">Contáctanos</a>
+							<a class="button" href="mailto:coresupplypartners@gmail.com">Contáctanos</a>
 							<a class="button button--gold" href="#servicios">Ver servicios</a>
 						</div>
 						<p class="highlight">
@@ -95,7 +94,7 @@ import Layout from '../layouts/Layout.astro';
 							legal compliance, and responsible wholesale distribution.
 						</p>
 						<div class="hero-actions">
-							<a class="button" href="#contacto">Contact us</a>
+							<a class="button" href="mailto:coresupplypartners@gmail.com">Contact us</a>
 							<a class="button button--gold" href="#servicios">View services</a>
 						</div>
 						<p class="highlight">
@@ -294,94 +293,34 @@ import Layout from '../layouts/Layout.astro';
 		</section>
 
 		<section class="section" id="contacto">
-			<div class="container grid grid--2">
-				<div>
-					<div class="lang-block" data-lang="es">
-						<h2>Contacto</h2>
+			<div class="container">
+				<div class="lang-block" data-lang="es">
+					<h2>Contacto</h2>
+					<div class="card">
+						<p><strong>Contacto:</strong> Luis García – Equipo de Ventas</p>
+						<p><strong>Correo:</strong> [Pendiente por definir]</p>
+						<p><strong>Teléfono:</strong> [Pendiente por definir]</p>
 						<p>
-							Conversemos sobre tus necesidades de abastecimiento y expansión comercial. Nuestro
-							equipo está listo para ayudar.
+							<strong>Dirección comercial:</strong> 5830 E 2nd St Ste 7000 #29367, Casper,
+							WY 82609
 						</p>
-						<div class="card">
-							<p><strong>Contacto:</strong> Luis García – Equipo de Ventas</p>
-							<p><strong>Correo:</strong> [Pendiente por definir]</p>
-							<p><strong>Teléfono:</strong> [Pendiente por definir]</p>
-							<p>
-								<strong>Dirección comercial:</strong> 5830 E 2nd St Ste 7000 #29367, Casper,
-								WY 82609
-							</p>
-						</div>
-					</div>
-					<div class="lang-block" data-lang="en">
-						<h2>Contact</h2>
-						<p>
-							Let’s talk about your sourcing and market expansion needs. Our team is ready to help.
-						</p>
-						<div class="card">
-							<p><strong>Contact:</strong> Luis García – Sales Team</p>
-							<p><strong>Email:</strong> [To be defined]</p>
-							<p><strong>Phone:</strong> [To be defined]</p>
-							<p>
-								<strong>Business address:</strong> 5830 E 2nd St Ste 7000 #29367, Casper,
-								WY 82609
-							</p>
-						</div>
 					</div>
 				</div>
-				<div class="card">
-					<form class="form">
-						<label>
-							<span class="lang-block" data-lang="es">Nombre</span>
-							<span class="lang-block" data-lang="en">Name</span>
-							<input
-								name="nombre"
-								type="text"
-								placeholder="Tu nombre"
-								data-placeholder-es="Tu nombre"
-								data-placeholder-en="Your name"
-								required
-							/>
-						</label>
-						<label>
-							<span class="lang-block" data-lang="es">Empresa (opcional)</span>
-							<span class="lang-block" data-lang="en">Company (optional)</span>
-							<input
-								name="empresa"
-								type="text"
-								placeholder="Nombre de la empresa"
-								data-placeholder-es="Nombre de la empresa"
-								data-placeholder-en="Company name"
-							/>
-						</label>
-						<label>
-							<span class="lang-block" data-lang="es">Correo electrónico</span>
-							<span class="lang-block" data-lang="en">Email</span>
-							<input
-								name="email"
-								type="email"
-								placeholder="correo@empresa.com"
-								data-placeholder-es="correo@empresa.com"
-								data-placeholder-en="email@company.com"
-								required
-							/>
-						</label>
-						<label>
-							<span class="lang-block" data-lang="es">Mensaje</span>
-							<span class="lang-block" data-lang="en">Message</span>
-							<textarea
-								name="mensaje"
-								placeholder="Cuéntanos cómo podemos ayudarte"
-								data-placeholder-es="Cuéntanos cómo podemos ayudarte"
-								data-placeholder-en="Tell us how we can help"
-							></textarea>
-						</label>
-						<button class="button" type="submit" data-submit-es="Enviar mensaje" data-submit-en="Send message">
-							Enviar mensaje
-						</button>
-					</form>
+				<div class="lang-block" data-lang="en">
+					<h2>Contact</h2>
+					<div class="card">
+						<p><strong>Contact:</strong> Luis García – Sales Team</p>
+						<p><strong>Email:</strong> [Pending to confirm]</p>
+						<p><strong>Phone:</strong> [Pending to confirm]</p>
+						<p>
+							<strong>Business address:</strong> 5830 E 2nd St Ste 7000 #29367, Casper,
+							WY 82609
+						</p>
+					</div>
 				</div>
 			</div>
 		</section>
+
 	</main>
 
 	<footer class="footer">
@@ -397,20 +336,13 @@ import Layout from '../layouts/Layout.astro';
 		</div>
 	</footer>
 
-	<a class="contact-fab" href="#contacto" data-fab-es="Contáctanos" data-fab-en="Contact us">
-		Contáctanos
-	</a>
-
 	<script>
-		const body = document.body;
-		const langButtons = document.querySelectorAll('[data-lang-toggle]');
+		const langButton = document.querySelector('[data-lang-toggle]');
 		const themeButton = document.querySelector('[data-theme-toggle]');
 
 		const setLang = (lang) => {
 			body.dataset.lang = lang;
-			langButtons.forEach((btn) => {
-				btn.classList.toggle('is-active', btn.dataset.langToggle === lang);
-			});
+			langButton.textContent = lang === 'es' ? 'EN' : 'ES';
 			document.querySelectorAll('[data-placeholder-es]').forEach((field) => {
 				field.placeholder =
 					lang === 'es' ? field.dataset.placeholderEs : field.dataset.placeholderEn;
@@ -418,10 +350,6 @@ import Layout from '../layouts/Layout.astro';
 			const submit = document.querySelector('[data-submit-es]');
 			if (submit) {
 				submit.textContent = lang === 'es' ? submit.dataset.submitEs : submit.dataset.submitEn;
-			}
-			const fab = document.querySelector('[data-fab-es]');
-			if (fab) {
-				fab.textContent = lang === 'es' ? fab.dataset.fabEs : fab.dataset.fabEn;
 			}
 			if (themeButton) {
 				const isDark = body.dataset.theme === 'dark';
@@ -435,8 +363,9 @@ import Layout from '../layouts/Layout.astro';
 			}
 		};
 
-		langButtons.forEach((btn) => {
-			btn.addEventListener('click', () => setLang(btn.dataset.langToggle));
+		langButton?.addEventListener('click', () => {
+			const currentLang = body.dataset.lang || 'es';
+			setLang(currentLang === 'es' ? 'en' : 'es');
 		});
 
 		themeButton?.addEventListener('click', () => {

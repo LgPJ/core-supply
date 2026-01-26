@@ -55,6 +55,7 @@ const description =
 	body {
 		margin: 0;
 		font-family: 'Open Sans', system-ui, -apple-system, sans-serif;
+		justify-content: flex-start;
 		color: var(--text);
 		background: var(--light);
 		line-height: 1.6;
@@ -100,6 +101,8 @@ const description =
 		justify-content: space-between;
 		gap: 16px;
 		padding: 20px 0;
+		position: relative;
+		margin-bottom: 24px;
 	}
 
 	.logo {
@@ -126,13 +129,19 @@ const description =
 		display: flex;
 		gap: 10px;
 		flex-wrap: wrap;
+		padding: 6px 10px;
+		border-radius: 999px;
+		background: rgba(255, 255, 255, 0.08);
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		backdrop-filter: blur(12px);
+		box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 	}
 
 	.toggle {
 		padding: 8px 14px;
 		border-radius: 999px;
 		border: 1px solid rgba(255, 255, 255, 0.3);
-		background: rgba(255, 255, 255, 0.08);
+		background: transparent;
 		color: #ffffff;
 		font-weight: 600;
 		cursor: pointer;
@@ -141,9 +150,11 @@ const description =
 
 	body[data-theme='dark'] .toggle {
 		border-color: rgba(229, 159, 32, 0.4);
+		color: #f8fafc;
 	}
 
 	.toggle.is-active {
+		/* This class is now unused but kept for potential future use */
 		background: rgba(229, 159, 32, 0.28);
 		color: #ffffff;
 	}
@@ -262,6 +273,7 @@ const description =
 		flex-wrap: wrap;
 		gap: 10px;
 		margin: 18px 0 12px;
+		justify-content: flex-start;
 	}
 
 	.trade-pill {
@@ -303,6 +315,7 @@ const description =
 		flex-wrap: wrap;
 		gap: 16px;
 		margin-top: 28px;
+		justify-content: flex-start;
 	}
 
 	.highlight {
@@ -426,53 +439,75 @@ const description =
 		opacity: 0.8;
 	}
 
-	.contact-fab {
-		position: fixed;
-		right: 20px;
-		bottom: 20px;
-		z-index: 40;
-		padding: 12px 22px;
-		border-radius: 999px;
-		background: var(--gold);
-		color: var(--navy);
-		font-weight: 700;
-		box-shadow: 0 16px 30px rgba(229, 159, 32, 0.3);
+	@media (max-width: 720px) {
+		.topbar {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 20px;
+			padding-top: 0;
+		}
+
+		.topbar-actions {
+			display: flex;
+			position: static;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+			gap: 10px;
+			padding: 10px 12px;
+		}
+
+		.hero-content {
+			text-align: center;
+			margin: 0 auto;
+		}
+
+		.trade-badges,
+		.ops-note__chips,
+		.hero-actions {
+			justify-content: center;
+		}
+
+		.hero-actions .button {
+			width: min(320px, 100%);
+		}
 	}
-
-	@media (max-width: 900px) {
-		.grid--2,
-		.grid--3 {
-			grid-template-columns: 1fr;
+			position: absolute;
+			top: 0;
+			right: 0;
+			flex-direction: column;
+			gap: 8px;
+			padding: 12px;
 		}
 
-		.stats {
-			grid-template-columns: 1fr;
+		.hero-content {
+			text-align: center;
+			margin: 0 auto;
 		}
 
-		.hero {
-			padding: 90px 0 70px;
+		.trade-badges,
+		.ops-note__chips,
+		.hero-actions {
+			justify-content: center;
+		}
+
+		.hero-actions .button {
+			width: min(320px, 100%);
 		}
 	}
 
 	@media (max-width: 600px) {
 		.section {
-			padding: 64px 0;
+			padding: 56px 0;
 		}
 
 		.hero-actions {
 			flex-direction: column;
-			align-items: stretch;
 		}
 
-		.button,
-		.contact-fab {
-			width: 100%;
-			text-align: center;
-		}
-
-		.contact-fab {
-			right: 16px;
-			left: 16px;
+		.hero-actions .button {
+			width: min(320px, 100%);
+			margin: 0 auto;
 		}
 	}
 </style>
