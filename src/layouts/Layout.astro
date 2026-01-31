@@ -103,6 +103,7 @@ const description =
 		padding: 20px 0;
 		position: relative;
 		margin-bottom: 24px;
+		width: 100%;
 	}
 
 	.logo {
@@ -250,6 +251,12 @@ const description =
 		overflow: hidden;
 	}
 
+	.hero .container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
 	.hero::after {
 		content: '';
 		position: absolute;
@@ -266,6 +273,7 @@ const description =
 
 	.hero-content {
 		max-width: 620px;
+		text-align: center;
 	}
 
 	.trade-badges {
@@ -273,7 +281,7 @@ const description =
 		flex-wrap: wrap;
 		gap: 10px;
 		margin: 18px 0 12px;
-		justify-content: flex-start;
+		justify-content: center;
 	}
 
 	.trade-pill {
@@ -315,7 +323,7 @@ const description =
 		flex-wrap: wrap;
 		gap: 16px;
 		margin-top: 28px;
-		justify-content: flex-start;
+		justify-content: center;
 	}
 
 	.highlight {
@@ -345,6 +353,7 @@ const description =
 		display: flex;
 		flex-wrap: wrap;
 		gap: 8px;
+		justify-content: center;
 	}
 
 	.ops-chip {
@@ -455,29 +464,6 @@ const description =
 			justify-content: flex-start;
 			gap: 10px;
 			padding: 10px 12px;
-		}
-
-		.hero-content {
-			text-align: center;
-			margin: 0 auto;
-		}
-
-		.trade-badges,
-		.ops-note__chips,
-		.hero-actions {
-			justify-content: center;
-		}
-
-		.hero-actions .button {
-			width: min(320px, 100%);
-		}
-	}
-			position: absolute;
-			top: 0;
-			right: 0;
-			flex-direction: column;
-			gap: 8px;
-			padding: 12px;
 		}
 
 		.hero-content {
